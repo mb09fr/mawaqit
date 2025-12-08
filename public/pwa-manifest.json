@@ -1,0 +1,43 @@
+{
+    "name": "Mawaqit Prayer Times",
+    "short_name": "Mawaqit",
+    "description": "Application affichant les horaires de prière islamiques avec horloge analogique, compte à rebours et Adhan",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#111827",
+    "theme_color": "#1e3a5f",
+    "lang": "ar",
+    "dir": "rtl",
+    "categories": [
+        "lifestyle",
+        "utilities"
+    ],
+    "icons": [
+        {
+            "src": "/icons/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

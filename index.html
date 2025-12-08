@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mawaqit Prayer Times</title>
+
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#1e3a5f" />
+  <meta name="description"
+    content="Application affichant les horaires de prière islamiques avec horloge analogique, compte à rebours et Adhan" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mawaqit" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/pwa-manifest.json" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/icons/icon48.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
+
+  <!-- Local Fonts for offline support -->
+  <link rel="stylesheet" href="/fonts.css">
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* PWA Standalone mode - full screen */
+    @media (display-mode: standalone) {
+
+      html,
+      body {
+        height: 100vh;
+        height: 100dvh;
+        /* Dynamic viewport height for mobile */
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-gray-900">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+
+  <!-- Service Worker Registration (only in production) -->
+  <script>
+    if (location.hostname !== 'localhost' && 'serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('[PWA] Service Worker registered:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('[PWA] Service Worker registration failed:', error);
+          });
+      });
+    } else {
+      // DEVELOPMENT: Remove all service workers
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(regs => {
+          regs.forEach(reg => reg.unregister());
+        });
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Mawaqit Prayer Times",
+  "version": "1.0.0",
+  "description": "An extension to display Islamic prayer times from Mawaqit, featuring an analog clock, countdown to the next prayer, and a daily schedule.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "geolocation",
+    "notifications",
+    "alarms",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://www.islamcan.com/*",
+    "https://mawaqit.net/*",
+    "https://api.aladhan.com/*",
+    "https://nominatim.openstreetmap.org/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
