@@ -30,11 +30,7 @@ body {
     overflow: hidden;
 }
 
-.analog-clock {
-    width: 160px !important;
-    height: 160px !important;
-    margin: 10px auto;
-}
+
 
 .countdown-container {
     padding: 10px;
